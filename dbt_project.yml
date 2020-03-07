@@ -1,0 +1,48 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'gadslh'
+version: '1.0.0'
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'name of your profile file'
+
+# These configurations specify where dbt should look for different types of files.
+# The `source-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+source-paths: ["models"]
+analysis-paths: ["analysis"] 
+test-paths: ["tests"]
+data-paths: ["data"]
+macro-paths: ["macros"]
+
+target-path: "target"  # directory which will store compiled SQL files
+clean-targets:         # directories to be removed by `dbt clean`
+    - "target"
+    - "dbt_modules"
+
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+models:
+        gadslh:
+                production: 
+                        materialized: table
+                staging:
+                        materialized: ephemeral
+        vars: 
+                t_campaignStats: 'name of campaignStats table'
+                t_campaign: 'name of campaign table'
+                t_ads: 'name of ads table'
+                t_adStats: 'name of adStats table`'
+                t_campaignConv: 'name of campaignConversionStats table'
+                t_adGroupStats: 'name of adGroupStats table'
+                t_adGroup: 'name of adGroup table'
+                t_adGroupConv: 'name of adGroupConversions table'
+                convName1: 'name of first conversion'
+                convName2: 'name of second conversion'
+                convName3: 'name of third conversion'
+                
+  

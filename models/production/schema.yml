@@ -1,0 +1,168 @@
+version: 2
+
+models:
+  - name: campaignData
+    description: "Google Ads campaign data"
+
+    columns: 
+      - name: campaignName
+        description: Name of the Google Ads campaign
+
+      - name: Impressions
+        description: Number of impressions.
+
+      - name: campaignId
+        description: Google Ads campaign ID. 
+
+      - name: externalCustomerId
+        description: The ID of Google Ads account.
+
+      - name: ISOWEEK
+        description: ISOWEEK (in xx format) derived from the date field. 
+
+      - name: Engine
+        description: Client-specific. 
+
+      - name: Clicks 
+        description: Google Ads click data
+
+      - name: month
+        description: Month (in x format) derived from the date field. 
+
+      - name: year 
+        description: Year (in yyyy format) derived from the date field. 
+
+      - name: cost
+        description: Cost data. 
+
+      - name: conversions
+        description: Number of Google Ads conversions.
+
+      - name: ctr
+        description: Click-through-rate of the campaign. 
+
+      - name: cpc
+        description: Cost per one click in the campaign. 
+
+      - name: convRate
+        description: Conversion rate of the campaign. 
+
+      - name: costPerConv
+        description: Cost per one conversion in the campaign. 
+
+    tests:
+      - unique:
+          column_name: "concat(CampaignName, cast(ISOWEEK as string))"
+
+  - name: textAds
+    description: "Google Ads text ads data."
+    
+    columns: 
+        - name: campaignName
+          description: Name of the Google Ads campaign.
+        
+        - name: HeadlinePart1
+          description: First part of Google Ads ad headline. 
+
+        - name: HeadlinePart2
+          description: Second part of Google Ads ad headline. 
+
+        - name: ExpandedTextAdHeadlinePart3
+          description: Third part of Google Ads ad headline. Only in expanded text ads. 
+
+        - name: Description
+          description: First part of Google Ads ad text.
+
+        - name: ExpandedTextAdDescription2
+          description: Second part of Google Ads ad text. 
+
+  - name: creativeUrl
+    description: "Campaign data split by final urls of the campaign"
+      
+    columns: 
+
+        - name: CampaignId
+          description: The ID of Google Ads campaign. 
+
+        - name: CampaignName
+          description: Name of the Google Ads campaign.
+
+        - name: CreativeId
+          description: Google Ads ad id. 
+
+        - name: FinalUrl
+          description: Final URL of "Google Ads text ads data. "
+
+        - name: Impressions
+          description: Number of impressions.
+
+        - name: Clicks 
+          description: Google Ads click data
+
+        - name: Cost
+          description: Cost data as int.  
+
+        - name: Conversions
+          description: Number of Google Ads conversions.
+
+        - name: ISOWEEK
+          description: ISOWEEK (in xx format) derived from the date field. 
+
+        - name: month
+          description: Month (in x format) derived from the date field. 
+
+        - name: year 
+          description: Year (in yyyy format) derived from the date field. 
+
+        - name: ctr
+          description: Click-through-rate of the campaign. 
+
+        - name: cpc
+          description: Cost per one click in the campaign. 
+
+        - name: convRate
+          description: Conversion rate of the campaign. 
+
+        - name: costPerConv
+          description: Cost per one conversion in the campaign. 
+
+  - name: adGroupData
+    description: "Data aggregated on AdGroup level"
+
+    columns: 
+
+        - name: CampaignName
+          description: Name of the campaign that the AdGroup belongs to
+
+        - name: AdGroupName
+          description: Name of the AdGroup
+
+        - name: impr
+          description: Number of all impressions of the ads in the ad AdGroup
+
+        - name: AdGroupId
+          description: ID of an Ad Group. 
+
+        - name: CampaignId
+          description: ID of an Campaign that the ad group belongs to. 
+
+        - name: ISOWEEK
+          description: ISOWEEK (in xx format) derived from the date field. 
+
+        - name: month
+          description: Month (in x format) derived from the date field. 
+
+        - name: year 
+          description: Year (in yyyy format) derived from the date field. 
+
+        - name: ctr
+          description: Click-through-rate of the ad group. 
+
+        - name: cpc
+          description: Cost per one click in the ad group . 
+
+        - name: convRate
+          description: Conversion rate of the ad group. 
+
+        - name: costPerConv
+          description: Cost per one conversion in the ad group.
