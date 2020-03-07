@@ -25,7 +25,7 @@ https://docs.getdbt.com/docs/installation
 |--|--|--|
 | t_campaignStats | Full name of p_campaignStats table from Google Ads data export (dataset id included) |
 | t_campaign| Full name of p_Campaign table from Google Ads data export (dataset id included) |
-| t_ads | Full name of p_Ad table from Google Ads dgit ata export (dataset id included) |
+| t_ads | Full name of p_Ad table from Google Ads data export (dataset id included) |
 | t_adStats | Full name of p_AdBasicStats table from Google Ads data export (dataset id included) |
 | t_campaignConv | Full name of p_CampaignConversionStats table from Google Ads data export (dataset id included) |
 | t_adGroupStats | Full name of p_AdGroupStats table from Google Ads data export (dataset id included) |
