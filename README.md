@@ -14,6 +14,8 @@ dbt data models for Google Ads data (exported to BigQuery via Google Data Transf
 | textAds | Text ads without statistics |
 
 <h2> Installation instructions </h2>
+
+https://docs.getdbt.com/docs/installation
   
 <h2> Configuration instructions </h2>
   
