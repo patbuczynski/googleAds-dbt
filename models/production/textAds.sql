@@ -6,18 +6,20 @@ ta.HeadlinePart2,
 ta.ExpandedTextAdHeadlinePart3,
 ta.Description,
 ta.ExpandedTextAdDescription2,
-s.Impressions, 
+im.impr Impressions, 
 s.Clicks, 
 s.Cost, 
 s.Conversions, 
 s.ISOWEEK, 
 s.month,
 s.year,
-(s.Clicks/NULLIF(s.Impressions, 0)) ctr, 
+(s.Clicks/NULLIF(im.impr, 0)) ctr, 
 (s.Conversions/NULLIF(s.Clicks, 0)) ConvRate, 
 (s.Cost/NULLIF(s.Clicks,0)) cpc, 
 (s.Cost/NULLIF(s.Conversions,0)) CostPerConv
 FROM {{ref('stg_textAds')}} ta
+LEFT JOIN {{ref('stg_creativeImpressions')}} im
+ON ta.CreativeId = im.CreativeId 
 JOIN {{ref('stg_campaignLookup')}} cl
 ON cl.campaignId = ta.campaignId
 LEFT JOIN {{ref('stg_creativeBase')}} s

@@ -19,10 +19,12 @@ AND ab.month = im.month
 AND ab.year = im.year
 JOIN {{ref('stg_adGroupLookup')}} al
 ON ab.AdGroupId = al.AdGroupId
+JOIN {{ref('stg_campaignLookup')}} cm
+ON ab.campaignId = cm.campaignId
 LEFT JOIN {{ref('stg_adGroupConversions')}} ac
 ON ab.AdGroupId = ac.AdGroupId
 AND ab.ISOWEEK = ac.ISOWEEK
 AND ab.month = ac.month
 AND ab.year = ac.year
-GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12
+GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14
 

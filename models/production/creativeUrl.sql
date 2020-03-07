@@ -20,7 +20,6 @@ JOIN {{ref('stg_creativeLookup')}} u
 ON u.campaignId = s.campaignId AND u.CreativeId = s.CreativeId
 LEFT JOIN {{ref('stg_creativeImpressions')}} im
 ON s.CreativeId = im.CreativeId 
-AND s.externalCustomerId = im.externalCustomerId
 AND s.ISOWEEK = im.ISOWEEK
 AND s.month = im.month
 AND s.year = im.year
